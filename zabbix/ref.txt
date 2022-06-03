@@ -1,0 +1,22 @@
+Instalação Zabbix 
+
+https://www.zabbix.com/download?zabbix=5.0&os_distribution=ubuntu&os_version=20.04_focal&db=mysql&ws=nginx
+
+Correção:
+
+Pare o serviço do apache e copie o vhost do zabbix nginx para /etc/nginx/
+
+Exemplo.
+
+sudo systemctl stop apache2
+
+sudo cp /etc/zabbix/nginx.conf /etc/nginx/sites-enabled/default
+
+sudo systemctl restart zabbix-server zabbix-agent nginx php7.4-fpm
+sudo systemctl enable zabbix-server zabbix-agent nginx php7.4-fpm
+
+
+
+Integração com Telegram
+
+https://www.zabbix.com/integrations/telegram
